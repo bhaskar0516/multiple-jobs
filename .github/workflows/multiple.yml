@@ -19,8 +19,8 @@ jobs:
       - name: read th files
         run: cat hello.txt
 
-  deply_job:
-    needs: build_job
+  deploy_job:
+    needs: [build_job,test_job]
     runs-on: ubuntu-latest
     steps:
       - name: Add to the existing file
