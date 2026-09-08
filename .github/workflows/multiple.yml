@@ -18,7 +18,7 @@ jobs:
 
   test_job:
     needs: build_job
-    runs-on: ubtunu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Download file 
         uses: actions/download-artifact@v8
@@ -26,7 +26,7 @@ jobs:
           name: hello file artifact
          
 
-      - name: read th files
+      - name: read the files
         run: cat hello.txt
 
   deploy_job:
@@ -39,8 +39,8 @@ jobs:
         with:
           name: hello file artifact
       
-      - name: Add to the build existing file
+      - name: search for a string in hello file
         run: grep -i "bro" hello.txt
-        
+
       - name: deploy the job to k8
         run: echo "Job is succusefully deployed with new version app16"
