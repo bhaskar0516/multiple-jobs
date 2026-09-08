@@ -23,7 +23,7 @@ jobs:
     needs: [build_job,test_job]
     runs-on: ubuntu-latest
     steps:
-      - name: Add to the existing file
+      - name: Add to the build existing file
         run: echo "iam very good" >> hello.txt
       - name: deploy the job to k8
         run: echo "Job is succusefully deployed with new version app16"
