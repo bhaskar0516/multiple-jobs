@@ -21,7 +21,7 @@ jobs:
     runs-on: ubtunu-latest
     steps:
       - name: Download file 
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: hello file artifact
          
@@ -40,6 +40,7 @@ jobs:
           name: hello file artifact
       
       - name: Add to the build existing file
-        run: echo "iam very good" >> hello.txt
+        run: grep -i "bro" hello.txt
+        
       - name: deploy the job to k8
         run: echo "Job is succusefully deployed with new version app16"
