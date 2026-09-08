@@ -26,7 +26,7 @@ jobs:
       - name: Download file 
         uses: actions/download-artifact@v8
         with:
-          name: hello file artifact
+          name: hello filesss artifact
          
 
       - name: read the files
