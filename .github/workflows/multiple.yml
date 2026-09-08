@@ -1,0 +1,25 @@
+name: build,test and deploy jobs
+on: push
+jobs: 
+ build_job:
+   runs-on: ubuntu-latest
+   steps:
+     - name: download repo
+       uses: actions/checkout@v4
+
+     - name: add to file
+       runs: echo "hi bro whats up" >> hello.txt
+
+  test_job:
+    runs-on: ubtunu-latest
+    steps:
+      - name : list the files
+        run: ls
+      - name: read th files
+        run: cat hello.txt
+
+  deply_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy the job to k8
+        run: echo "Job is succusefully deployed with new version app16"
