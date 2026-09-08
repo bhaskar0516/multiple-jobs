@@ -16,6 +16,9 @@ jobs:
           name: hello file artifact
           path: hello.txt
 
+      - name: present working directory
+        run: pwd
+
   test_job:
     needs: build_job
     runs-on: ubuntu-latest
