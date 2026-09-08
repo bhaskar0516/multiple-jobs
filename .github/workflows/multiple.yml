@@ -11,6 +11,7 @@ jobs:
         run: echo "hi bro whats up" >> hello.txt
 
   test_job:
+    needs: build_job
     runs-on: ubtunu-latest
     steps:
       - name : list the files
@@ -19,6 +20,7 @@ jobs:
         run: cat hello.txt
 
   deply_job:
+    needs: build_job
     runs-on: ubuntu-latest
     steps:
       - name: Add to the existing file
