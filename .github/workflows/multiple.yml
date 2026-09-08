@@ -21,7 +21,7 @@ jobs:
     runs-on: ubtunu-latest
     steps:
       - name: Download file 
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@v7
         with:
           name: hello file artifact
          
