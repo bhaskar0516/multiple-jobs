@@ -14,8 +14,7 @@ jobs:
     needs: build_job
     runs-on: ubtunu-latest
     steps:
-      - name : list the files
-        run: ls
+    
       - name: read th files
         run: cat hello.txt
 
