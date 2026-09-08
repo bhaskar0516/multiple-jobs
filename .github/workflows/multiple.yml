@@ -1,14 +1,14 @@
 name: build,test and deploy jobs
 on: push
 jobs: 
- build_job:
-   runs-on: ubuntu-latest
-   steps:
-     - name: download repo
-       uses: actions/checkout@v4
+  build_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download repo
+        uses: actions/checkout@v4
 
-     - name: add to file
-       runs: echo "hi bro whats up" >> hello.txt
+      - name: add to file
+        runs: echo "hi bro whats up" >> hello.txt
 
   test_job:
     runs-on: ubtunu-latest
