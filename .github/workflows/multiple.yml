@@ -30,7 +30,7 @@ jobs:
         run: cat hello.txt
 
   deploy_job:
-    needs: [build_job,test_job]
+    needs: build_job
     runs-on: ubuntu-latest
     steps:
       
