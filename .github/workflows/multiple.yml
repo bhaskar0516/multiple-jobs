@@ -10,11 +10,22 @@ jobs:
       - name: add to file
         run: echo "hi bro whats up" >> hello.txt
 
+      - name: upload file 
+        uses: actions/upload-artifact@v7
+        with:
+          name: hello file artifact
+          path: hello.txt
+
   test_job:
     needs: build_job
     runs-on: ubtunu-latest
     steps:
-    
+      - name: Download file 
+        uses: actions/download-artifact@v8
+        with:
+          name: hello file artifact
+         
+
       - name: read th files
         run: cat hello.txt
 
@@ -22,6 +33,12 @@ jobs:
     needs: [build_job,test_job]
     runs-on: ubuntu-latest
     steps:
+      
+      - name: Download file 
+        uses: actions/download-artifact@v8
+        with:
+          name: hello file artifact
+      
       - name: Add to the build existing file
         run: echo "iam very good" >> hello.txt
       - name: deploy the job to k8
